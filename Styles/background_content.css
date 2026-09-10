@@ -6,7 +6,7 @@ html {
   background-color: #000000;
   
   /* Set the path to your image file */
-  background-image: url('your-image.jpg'); 
+  background-image: url('Piano_Web_Background.svg'); 
 
   /* Prevent the image from repeating like a grid */
   background-repeat: no-repeat; 
