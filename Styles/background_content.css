@@ -1,4 +1,10 @@
-body {
+html {
+  /* px means "pixels". The base font size is now 10 pixels high */
+  font-size: 10px;
+  /* Replace PLACEHOLDER with the font-family property value you got from Google Fonts */
+  font-family: "Manufacturing Consent", system-ui;
+  background-color: #000000;
+  
   /* Set the path to your image file */
   background-image: url('your-image.jpg'); 
 
