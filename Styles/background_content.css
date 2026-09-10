@@ -1,0 +1,19 @@
+body {
+  /* Set the path to your image file */
+  background-image: url('your-image.jpg'); 
+
+  /* Prevent the image from repeating like a grid */
+  background-repeat: no-repeat; 
+
+  /* Center the image horizontally and vertically */
+  background-position: center; 
+
+  /* Keep the background fixed in place while scrolling */
+  background-attachment: fixed; 
+
+  /* Stretch the image to perfectly cover the entire screen */
+  background-size: cover; 
+
+  /* Fallback color in case the image fails to load */
+  background-color: #333333; 
+}
