@@ -16,7 +16,14 @@
 
     <img src="Images/NDSS_Logo.svg" alt="The logo for Napanee District Secondary School" />
 
-    <p>Caleb Scrimshaw Is Here<br></p>
-    <p>Rowan Is Weird</p>
+    <!-- The text from your file will automatically load inside this tag --> 
+    <pre id="my-text">Loading content...</pre> 
+    
+    <script> 
+      // Change 'document.txt' to match your actual filename 
+      fetch('document.txt') 
+        .then(response => response.text()) 
+        .then(data => { document.getElementById('my-text').textContent = data; }); 
+    </script>
   </body>
 </html>
