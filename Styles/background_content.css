@@ -19,7 +19,4 @@ html {
 
   /* Stretch the image to perfectly cover the entire screen */
   background-size: cover; 
-
-  /* Fallback color in case the image fails to load */
-  background-color: #333333; 
 }
