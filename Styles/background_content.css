@@ -5,7 +5,7 @@ html {
   font-family: "Manufacturing Consent", system-ui;
   
   /* Set the path to your image file */
-  background-image: url('Piano_Web_Background.svg'); 
+  background-image: url('Piano_Web_Background.webp'); 
 
   /* Prevent the image from repeating like a grid */
   background-repeat: no-repeat; 
