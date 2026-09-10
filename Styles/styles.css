@@ -23,3 +23,25 @@ img {
   max-width: 100%;
   object-fit: cover;
 }
+
+html {
+  /* px means "pixels". The base font size is now 10 pixels high */
+  font-size: 10px;
+  /* Replace PLACEHOLDER with the font-family property value you got from Google Fonts */
+  font-family: "Manufacturing Consent", system-ui;
+  
+  /* Set the path to your image file */
+  background-image: url('Piano_Web_Background.webp'); 
+
+  /* Prevent the image from repeating like a grid */
+  background-repeat: no-repeat; 
+
+  /* Center the image horizontally and vertically */
+  background-position: center; 
+
+  /* Keep the background fixed in place while scrolling */
+  background-attachment: fixed; 
+
+  /* Stretch the image to perfectly cover the entire screen */
+  background-size: cover; 
+}
