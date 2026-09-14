@@ -53,7 +53,7 @@ html {
   line-height: 2;
   letter-spacing: 1px;
   font-family: "Manufacturing Consent", system-ui;
-  white-space: normal;
+  white-space: pre-wrap;
   overflow-wrap: break-word; 
   word-break: break-word; 
 }
