@@ -48,7 +48,7 @@ html {
   background-size: cover; 
 }
 
-#blue-text, gold-text, class-text, stage-text, drama-text {
+#blue-text, #gold-text, #class-text, #stage-text, #drama-text {
   font-size: 24px;
   line-height: 2;
   letter-spacing: 1px;
