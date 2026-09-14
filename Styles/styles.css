@@ -13,7 +13,7 @@ h1 {
 
 p,
 li {
-  font-size: 16px;
+  font-size: 54px;
   line-height: 2;
   letter-spacing: 1px;
 }
@@ -48,7 +48,7 @@ html {
 }
 
 #date-text {
-  font-size: 16px;
+  font-size: 54px;
   line-height: 2;
   letter-spacing: 1px;
   font-family: "Manufacturing Consent", system-ui;
