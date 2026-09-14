@@ -4,6 +4,7 @@ body {
   /* padding: 20px 20px 20px 20px; */
   background-color: white;
   border: 5px solid black;
+  padding: 20px, 20px, 20px, 20px;
 }
 
 h1 {
@@ -52,6 +53,7 @@ html {
   line-height: 2;
   letter-spacing: 1px;
   font-family: "Manufacturing Consent", system-ui;
+  white-space: normal;
   overflow-wrap: break-word; 
   word-break: break-word; 
 }
