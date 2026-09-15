@@ -5,6 +5,11 @@ body {
   background-color: white;
   border: 5px solid black;
   padding: 50px, 50px, 50px, 50px;
+  /*font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;*/
+  height: 100vh;
 }
 
 h1 {
@@ -58,14 +63,6 @@ html {
   word-break: break-word; 
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 .calendar {
   width: 350px;
   background-color: #fff;
