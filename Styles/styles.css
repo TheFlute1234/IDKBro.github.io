@@ -112,3 +112,11 @@ html {
   color: #fff;
   border-radius: 50%;
 }
+
+
+@media (max-width: 400px) {
+  .calendar {
+    width: 100%;
+    margin: 0 10px;
+  }
+}
