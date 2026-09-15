@@ -114,3 +114,16 @@ function renderCalendar(month, year) {
     calendarDates.appendChild(day);
   }
 }
+
+calendarDates.addEventListener('click', (e) => {
+  if (e.target.textContent !== '') {
+    alert(`You clicked on ${e.target.textContent} ${months[currentMonth]} ${currentYear}`);
+  }
+});
+
+@media (max-width: 400px) {
+  .calendar {
+    width: 100%;
+    margin: 0 10px;
+  }
+}
