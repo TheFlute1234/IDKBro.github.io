@@ -1,9 +1,38 @@
-fetch('./event_dates/gold_band.txt') 
-  .then(response => response.text()) 
-  .then(data => { 
-    const textContainer = document.getElementById('gold-text');
-    textContainer.textContent = data;
-  });
+let events = [];
+
+const eventFiles = [
+  {
+    file: './event_dates/gold_band.txt',
+    name: 'Gold Band',
+    className: 'gold-event'
+  },
+];
+
+Promise.all(
+  eventFiles.map(eventFile =>
+    fetch(eventFile.file)
+      .then(response => response.text())
+      .then(data => {
+        const lines = data.split('\n');
+
+        lines.forEach(line => {
+          if (line.trim() === '') return;
+
+          const [date, eventName] = line.split('|');
+
+          events.push({
+            date: date.trim(),
+            name: eventName
+              ? eventName.trim()
+              : eventFile.name,
+            className: eventFile.className
+          });
+        });
+      })
+  )
+).then(() => {
+  renderCalendar(currentMonth, currentYear);
+});
 
 const calendarDates = document.querySelector('.calendar-dates');
 const monthYear = document.getElementById('month-year');
@@ -23,27 +52,22 @@ function renderCalendar(month, year) {
   calendarDates.innerHTML = '';
   monthYear.textContent = `${months[month]} ${year}`;
 
-  // Get the first day of the month
   const firstDay = new Date(year, month, 1).getDay();
-
-  // Get the number of days in the month
   const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-  // Get today's date
   const today = new Date();
 
-  // Create blanks before the first day
+  // Blank spaces before the first day
   for (let i = 0; i < firstDay; i++) {
     const blank = document.createElement('div');
     calendarDates.appendChild(blank);
   }
 
-  // Populate the days
+  // Create the calendar days
   for (let i = 1; i <= daysInMonth; i++) {
     const day = document.createElement('div');
     day.textContent = i;
 
-    // Highlight today's date
+    // Highlight today
     if (
       i === today.getDate() &&
       year === today.getFullYear() &&
@@ -51,6 +75,22 @@ function renderCalendar(month, year) {
     ) {
       day.classList.add('current-date');
     }
+
+    // Format the date as YYYY-MM-DD
+    const dateString =
+      `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+
+    // Find events on this date
+    const dayEvents = events.filter(event => event.date === dateString);
+
+    // Display events on the day
+    dayEvents.forEach(event => {
+      const eventElement = document.createElement('div');
+      eventElement.textContent = event.name;
+      eventElement.classList.add(event.className);
+
+      day.appendChild(eventElement);
+    });
 
     calendarDates.appendChild(day);
   }
