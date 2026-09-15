@@ -57,7 +57,10 @@ function renderCalendar(month, year) {
   // Get the number of days in the month
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  // Create blanks for days of the week before the first day
+  // Get today's date
+  const today = new Date();
+
+  // Create blanks before the first day
   for (let i = 0; i < firstDay; i++) {
     const blank = document.createElement('div');
     calendarDates.appendChild(blank);
@@ -67,6 +70,16 @@ function renderCalendar(month, year) {
   for (let i = 1; i <= daysInMonth; i++) {
     const day = document.createElement('div');
     day.textContent = i;
+
+    // Highlight today's date
+    if (
+      i === today.getDate() &&
+      year === today.getFullYear() &&
+      month === today.getMonth()
+    ) {
+      day.classList.add('current-date');
+    }
+
     calendarDates.appendChild(day);
   }
 }
@@ -91,39 +104,8 @@ nextMonthBtn.addEventListener('click', () => {
   renderCalendar(currentMonth, currentYear);
 });
 
-function renderCalendar(month, year) {
-  // ... existing code ...
-
-  // Get today's date
-  const today = new Date();
-
-  // Populate the days
-  for (let i = 1; i <= daysInMonth; i++) {
-    const day = document.createElement('div');
-    day.textContent = i;
-
-    // Highlight today's date
-    if (
-      i === today.getDate() &&
-      year === today.getFullYear() &&
-      month === today.getMonth()
-    ) {
-      day.classList.add('current-date');
-    }
-
-    calendarDates.appendChild(day);
-  }
-}
-
 calendarDates.addEventListener('click', (e) => {
   if (e.target.textContent !== '') {
     alert(`You clicked on ${e.target.textContent} ${months[currentMonth]} ${currentYear}`);
   }
 });
-
-@media (max-width: 400px) {
-  .calendar {
-    width: 100%;
-    margin: 0 10px;
-  }
-}
