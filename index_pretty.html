@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Styles/styles.css" rel="stylesheet" />
+    <link href="Styles/background_content.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cantata+One&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="Scripts/script.js"></script>
+    <title>NDSS Music Calendar</title>
+  </head>
+
+  <body>
+    <main class="page-content">
+      <header class="site-header">
+        <img src="Images/NDSS_Music_Logo.svg" alt="The logo for Napanee District Secondary School" />
+        <div>
+          <p class="eyebrow">Music Department</p>
+          <h1>Music Calendar</h1>
+          <p class="subtitle">Gold Band events and important dates</p>
+        </div>
+      </header>
+
+      <section class="calendar" aria-label="Music calendar">
+        <div class="calendar-header">
+          <button id="prev-month" type="button" aria-label="Previous month">‹</button>
+          <div id="month-year" aria-live="polite"></div>
+          <button id="next-month" type="button" aria-label="Next month">›</button>
+        </div>
+
+        <div class="calendar-body">
+          <div class="calendar-weekdays" aria-hidden="true">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+
+          <div class="calendar-dates"></div>
+        </div>
+
+        <div class="calendar-legend">
+          <span class="legend-symbol">●</span>
+          <span>Gold Band event</span>
+          <span class="legend-today"></span>
+          <span>Today</span>
+        </div>
+      </section>
+    </main>
+
+    <div id="event-modal" class="event-modal" hidden>
+      <div class="event-modal-backdrop" data-close-modal></div>
+      <section class="event-card" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+        <button id="close-modal" class="close-modal" type="button" aria-label="Close">×</button>
+        <p class="eyebrow">Schedule</p>
+        <h2 id="event-modal-title"></h2>
+        <div id="event-modal-content"></div>
+      </section>
+    </div>
+  </body>
+</html>
