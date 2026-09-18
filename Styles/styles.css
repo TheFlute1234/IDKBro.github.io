@@ -1,122 +1,40 @@
-body {
-  width: 800px;
-  margin: 0 auto;
-  /* padding: 20px 20px 20px 20px; */
-  background-color: white;
-  border: 5px solid black;
-  padding: 50px 50px 50px 50px;
-  /*font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;*/
-  height: 100vh;
-}
-
-h1 {
-  font-size: 60px;
-  text-align: center;
-}
-
-p,
-li {
-  font-size: 24px;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-
-img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  object-fit: cover;
-}
-
-html {
-  /* px means "pixels". The base font size is now 10 pixels high */
-  font-size: 10px;
-  /* Replace PLACEHOLDER with the font-family property value you got from Google Fonts */
-  font-family: "Manufacturing Consent", system-ui;
-  
-  /* Set the path to your image file */
-  background-image: url('../Images/Piano_Web_Background.webp');
-
-  /* Prevent the image from repeating like a grid */
-  background-repeat: no-repeat; 
-
-  /* Center the image horizontally and vertically */
-  background-position: center; 
-
-  /* Keep the background fixed in place while scrolling */
-  background-attachment: fixed; 
-
-  /* Stretch the image to perfectly cover the entire screen */
-  background-size: cover; 
-}
-
-#blue-text, #gold-text, #class-text, #stage-text, #drama-text {
-  font-size: 24px;
-  line-height: 2;
-  letter-spacing: 1px;
-  font-family: "Manufacturing Consent", system-ui;
-  white-space: pre-wrap;
-  overflow-wrap: break-word; 
-  word-break: break-word; 
-}
-
 .calendar {
-  width: 350px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 900px;
+  max-width: 95%;
+  margin: 30px auto;
 }
-.calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-.calendar-header button {
-  background-color: transparent;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-#month-year {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #000;  
-}
-.calendar-weekdays, .calendar-dates {
+
+.calendar-dates {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
 }
-.calendar-weekdays div, .calendar-dates div {
-  text-align: center;
+
+.calendar-day {
+  min-height: 100px;
   padding: 10px;
-}
-.calendar-weekdays {
-  background-color: #eaeef3;
-}
-.calendar-weekdays div {
-  font-weight: bold;
-}
-.calendar-dates div {
-  border-bottom: 1px solid #eaeef3;
+  border: 2px solid black;
+  font-size: 22px;
+  text-align: left;
   cursor: pointer;
+  position: relative;
 }
-.calendar-dates div:hover {
-  background-color: #f1f1f1;
+
+.calendar-day:hover {
+  background-color: lightgray;
+}
+
+.empty-day {
+  border: none;
+  cursor: default;
 }
 
 .current-date {
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 50%;
+  border: 4px solid red;
 }
 
-
-@media (max-width: 400px) {
-  .calendar {
-    width: 100%;
-    margin: 0 10px;
-  }
+.event-symbol {
+  display: block;
+  font-size: 25px;
+  margin-top: 15px;
 }
